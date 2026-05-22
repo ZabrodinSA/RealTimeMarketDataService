@@ -1,0 +1,6 @@
+﻿{
+  "pair": "{ticker}",
+  "current_price": "{number}",
+  "trade_volume": "{number}",
+  "last_updated": "{ISO 8601 datetime}"
+}

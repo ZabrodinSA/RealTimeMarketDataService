@@ -1,0 +1,6 @@
+﻿{
+  "symbol": "{ticker}",
+  "price": "{number}",
+  "volume": "{number}",
+  "timestamp": "{ISO 8601 datetime}"
+}

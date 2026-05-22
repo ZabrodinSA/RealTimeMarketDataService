@@ -1,0 +1,8 @@
+﻿{
+  "asset": "{ticker}",
+  "price_usd": "{number}",
+  "volume_24h": "{number}",
+  "open_price": "{number}",
+  "close_price": "{number}",
+  "timestamp_utc": "{ISO 8601 datetime}"
+}
