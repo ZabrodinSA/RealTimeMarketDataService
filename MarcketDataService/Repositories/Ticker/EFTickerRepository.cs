@@ -9,7 +9,19 @@ public class EfTickerRepository(IDbContextFactory<TickerContext> contextFactory)
     {
         await using var context = await contextFactory.CreateDbContextAsync();
         await context.Tickers.AddAsync(ticker);
-        await context.SaveChangesAsync();
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateException ex)
+        {
+            Console.WriteLine($"DbUpdateException: {ex.Message}");
+            if (ex.InnerException != null)
+            {
+                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+            }
+        }
+        
     }
 
     public async Task<IEnumerable<TickerModel>> GetTickersBySymbolAsync(string symbol, int limit = 100)
